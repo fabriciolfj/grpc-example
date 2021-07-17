@@ -1,0 +1,23 @@
+syntax = "proto3";
+package com.github.fabriciolfj.v1;
+option java_package = "com.github.fabriciolfj.api.grpc.v1";
+option java_multiple_files = true;
+
+message PersonRequest {
+    string document = 1;
+    string name = 2;
+}
+
+message PersonResponse {
+    string code = 1;
+}
+
+message PersonRequestCode {
+    string code = 1;
+}
+
+service PersonService {
+
+    rpc Create(PersonRequest) returns (PersonResponse);
+    rpc find(PersonRequestCode) returns (PersonResponse);
+}

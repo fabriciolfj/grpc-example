@@ -1,0 +1,31 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.2'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.github.fabriciolfj'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+	mavenLocal()
+}
+
+def grpcVersion = '1.37.0'
+dependencies {
+	implementation 'com.github.fabriciolfj.api:api:0.0.1'
+	implementation "io.grpc:grpc-stub:${grpcVersion}"
+	implementation "com.google.protobuf:protobuf-java-util:3.15.8"
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+}
+
+test {
+	useJUnitPlatform()
+}

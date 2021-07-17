@@ -1,0 +1,7 @@
+server:
+  port: 8080
+
+grpc:
+  server:
+    host: localhost
+    port: 9090
